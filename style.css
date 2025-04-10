@@ -115,3 +115,16 @@ footer {
     }
   }
   
+.contact-links {
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  margin-top: -2px; 
+}
+
+.contact-links a {
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic; 
+  color: #132a7f;
+}
