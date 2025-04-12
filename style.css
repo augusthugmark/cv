@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #b0b6bc, #5db8fd); /* Soft gradient background */
+  background: linear-gradient(135deg, #b0c4de, #8ccbee);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -130,16 +130,43 @@ footer {
 }
 
 /* Styling for links */
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
 .contact-links a {
   text-decoration: none;
   font-weight: bold;
   font-style: italic;
   color: #132a7f;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Lägg till en "shine"-liknande gradient på hover */
+.contact-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease-in-out;
+}
+
+/* Trigga glansen när man hovrar */
+.contact-links a:hover::before {
+  left: 125%;
+}
+
+.contact-links a:hover {
+  color: #7f9db9; /* Silverblå ton */
+}
+
+
+/* Klick-effekt: sjunker in lite som en knapp */
+.contact-links a:active {
+  top: 1px; /* mindre rörelse */
+  transform: scale(0.98); /* lätt intryckning */
+  color: #0a3575; /* ännu mörkare blå, valfritt */
 }
