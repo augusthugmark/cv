@@ -99,10 +99,11 @@ body {
 
 footer {
   text-align: center;
-  padding: 10px;
+  margin-top: -16px;
+  padding: -8px;
   background-color: #dde6f0;
-  border-top: 2px solid #333;
-  font-size: 14px;
+  border-top: 2px solid #908b8b;
+  font-size: 12px;
   width: 100%;
   box-sizing: border-box;
 }
