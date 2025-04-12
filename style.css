@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #b0c4de, #8ccbee);
+  background: radial-gradient(circle at center, #dbeafe, #bcd0e8);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@ body {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #d3d3d3;
+  background-color: #dde6f0;
   border-top: 2px solid #333;
   font-size: 14px;
   width: 100%;
