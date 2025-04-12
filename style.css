@@ -25,9 +25,8 @@ body {
   align-items: stretch; /* Stretch all columns to have the same height */
 }
 
-/* Sidebar */
 .sidebar {
-  background-color: #e3f2fd; /* Light blue background */
+  background-color: #e3f2fd;
   padding: 20px;
   padding-top: 10px;
   border-radius: 8px;
@@ -40,7 +39,7 @@ body {
 }
 
 .sidebar .photo img {
-  width: 120px; /* Adjust size of the photo */
+  width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-bottom: 20px;
@@ -48,7 +47,6 @@ body {
   object-fit: cover; /* Ensures photo maintains aspect ratio */
 }
 
-/* Content */
 .content {
   background-color: #e3f2fd;
   padding: 20px;
@@ -83,7 +81,6 @@ body {
   white-space: pre-line;
 }
 
-/* Achievements */
 .achievements {
   font-size: 0.9em;
   font-style: italic;
@@ -100,7 +97,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 10px;
@@ -119,17 +115,16 @@ footer {
   }
 
   .contact-links {
-      flex-direction: column; /* Stack the contact links vertically on mobile */
+      flex-direction: column;
       gap: 15px; /* Increase gap between the links */
       margin-top: 0; /* Remove negative margin */
   }
 
   .contact-links a {
-      font-size: 16px; /* Increase font size for mobile readability */
+      font-size: 16px;
   }
 }
 
-/* Styling for links */
 .contact-links a {
   text-decoration: none;
   font-weight: bold;
@@ -141,7 +136,7 @@ footer {
   overflow: hidden;
 }
 
-/* Lägg till en "shine"-liknande gradient på hover */
+/* Added "shine"-ish gradient on hover */
 .contact-links a::before {
   content: '';
   position: absolute;
@@ -154,19 +149,18 @@ footer {
   transition: left 0.5s ease-in-out;
 }
 
-/* Trigga glansen när man hovrar */
+/* Trigger the "shine" when you hover over */
 .contact-links a:hover::before {
   left: 125%;
 }
 
 .contact-links a:hover {
-  color: #7f9db9; /* Silverblå ton */
+  color: #7f9db9;
 }
 
-
-/* Klick-effekt: sjunker in lite som en knapp */
+/* Klick-effect: Sinks abit when you klick on it */
 .contact-links a:active {
-  top: 1px; /* mindre rörelse */
-  transform: scale(0.98); /* lätt intryckning */
-  color: #0a3575; /* ännu mörkare blå, valfritt */
+  top: 1px; /* less movement  */
+  transform: scale(0.98); /* light press */
+  color: #0a3575; 
 }
