@@ -97,9 +97,8 @@ body {
 .contact-links a {
   text-decoration: none;
   font-weight: bold;
-  font-style: italic;
   font-size: 1.0em;
-  color: #132a7f;
+  color: #0c1d5b;
   position: relative;
   display: inline-block;
   transition: color 0.3s ease;
