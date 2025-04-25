@@ -144,4 +144,8 @@ body {
   .contact-links a {
     font-size: 16px;
   }
+
+  .contact-links a {
+    color: #003366;
+  }
 }
