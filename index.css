@@ -147,6 +147,17 @@ body {
   line-height: 30px;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 @media screen and (max-width: 768px) {
   .container {

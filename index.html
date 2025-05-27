@@ -8,44 +8,41 @@
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <div class="container">
 
     <!-- PROFILE -->
-    <section class="content">
+    <section class="content reveal">
       <div class="profile-photo">
         <img src="1.jpg" alt="August Hugmark" />
       </div>
-      <h1>August Hugmark</h1>
-      <p><strong>Junior System Developer .NET</strong></p>
-      <p><strong>Location:</strong> Hägersten, Stockholm, Sweden</p>
-      <p><strong>Date of Birth:</strong> 1991/08/30</p>
-      <p class="contact-info-title">
+      <h1 class="reveal">August Hugmark</h1>
+      <p class="reveal"><strong>Junior System Developer .NET</strong></p>
+      <p class="reveal"><strong>Location:</strong> Hägersten, Stockholm, Sweden</p>
+      <p class="reveal"><strong>Date of Birth:</strong> 1991/08/30</p>
+      <p class="contact-info-title reveal">
         <i class="fa-solid fa-address-book"></i> Contact Information:
       </p>
-      <p><strong>Phone:</strong> +46 70 028 66 91</p>
+      <p class="reveal"><strong>Phone:</strong> +46 70 028 66 91</p>
 
-      <div class="contact-links">
+      <div class="contact-links reveal">
         <p><a href="mailto:august.hugmark@gmail.com">august.hugmark@gmail.com</a></p>
-              <div class="social-icons">
-        <a href="https://www.linkedin.com/in/dittnamn/" target="_blank">
-          <i class="fa-brands fa-linkedin" style="color: #0077B5;"></i>
-        </a>
-        <a href="https://github.com/augusthugmark" target="_blank">
-          <i class="fa-brands fa-github" style="color: #000;"></i>
-        </a>
-      </div>
-
-        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/dittnamn/" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #0077B5;"></i>
+          </a>
+          <a href="https://github.com/augusthugmark" target="_blank">
+            <i class="fa-brands fa-github" style="color: #000;"></i>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS + ABOUT -->
-    <section class="content">
-      <h2>Skills</h2>
-      <ul class="skill-list">
+    <section class="content reveal">
+      <h2 class="reveal">Skills</h2>
+      <ul class="skill-list reveal">
         <li>OOP, C#, .NET, HTML, CSS, Blazor</li>
         <li>EntityFrameworkCore, Identity, ASP.NET</li>
         <li>JavaScript, Node.js, React</li>
@@ -53,48 +50,45 @@
         <li>Unit/Integration Testing, Agile methods</li>
       </ul>
 
-      <h2>About Me</h2>
-      <p>
+      <h2 class="reveal">About Me</h2>
+      <p class="reveal">
         I’ve always been curious about how things work, from music and storytelling to code and technology. Years of making music taught me structure, creativity, and collaboration. That same mindset now drives me as a developer: solving real problems, refining my craft, and staying curious. Whether it’s strategizing in chess, debugging tricky code, choosing the right design, or watching a good movie, I enjoy the balance of logic and creativity.
       </p>
 
       <!-- ACHIEVEMENTS -->
-      <h2>Achievements</h2>
-      <ul class="achievements">
+      <h2 class="reveal">Achievements</h2>
+      <ul class="achievements reveal">
         <li>Featured saxophonist on the Swedish Grammis-nominated album "Silk City" by Napolés, 2025</li>
         <li>Signe & Edvin Malmqvist scholarship, 2017</li>
         <li>Torsten Tegstam Musicology Fund scholarship, 2017</li>
       </ul>
-
     </section>
 
     <!-- EDUCATION + WORK EXPERIENCE -->
-    <section class="content">
-
-      <h2>Work Experience</h2>
-      <div>
+    <section class="content reveal">
+      <h2 class="reveal">Work Experience</h2>
+      <div class="reveal">
         <h3>Saxophone and ensemble teacher</h3>
         <p><strong>Kulturama-Medborgarskolan, Stockholm</strong> <br> (2019 - 2024)</p>
       </div>
-      <div>
+      <div class="reveal">
         <h3>Freelance musician</h3>
         <p><strong>Stockholm</strong> (2018 - 2024)</p>
       </div>
-      <div>
+      <div class="reveal">
         <h3>Special needs teaching assistant</h3>
         <p><strong>Upptäckarna AB, Stockholm</strong> (2018 - 2024)</p>
       </div>
 
-      <h2>Education</h2>
-      <div>
+      <h2 class="reveal">Education</h2>
+      <div class="reveal">
         <h3>System Developer .NET</h3>
         <p><strong>Newton Kompetensutveckling YH</strong> (2024 - 2026)</p>
       </div>
-      <div>
+      <div class="reveal">
         <h3>Bachelor's degree in Music</h3>
         <p><strong>Lund University</strong> (2015 - 2018)</p>
       </div>
-
     </section>
   </div>
 
@@ -103,5 +97,22 @@
       <p>@ August Hugmark 2025</p>
     </div>
   </footer>
+
+  <!-- JS for scroll reveal -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>
