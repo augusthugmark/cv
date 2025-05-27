@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="favicon_rounded.png">
+  <link rel="icon" type="image/png" href="assets/imgs/favicon_rounded.png">
   <title>August Hugmark - CV</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
 </head>
@@ -15,12 +15,13 @@
     <!-- PROFILE -->
     <section class="content reveal">
       <div class="profile-photo">
-        <img src="1.jpg" alt="August Hugmark" />
+        <img src="assets/imgs/1.jpg" alt="August Hugmark" />
       </div>
       <h1 class="reveal">August Hugmark</h1>
       <p class="reveal"><strong>Junior System Developer .NET</strong></p>
       <p class="reveal"><strong>Location:</strong> Hägersten, Stockholm, Sweden</p>
       <p class="reveal"><strong>Date of Birth:</strong> 1991/08/30</p>
+      <br>
       <p class="contact-info-title reveal">
         <i class="fa-solid fa-address-book"></i> Contact Information:
       </p>
@@ -79,7 +80,6 @@
         <h3>Special needs teaching assistant</h3>
         <p><strong>Upptäckarna AB, Stockholm</strong> (2018 - 2024)</p>
       </div>
-
       <h2 class="reveal">Education</h2>
       <div class="reveal">
         <h3>System Developer .NET</h3>
@@ -99,20 +99,7 @@
   </footer>
 
   <!-- JS for scroll reveal -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
+  <script src="script/index.js"></script>
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    reveals.forEach(el => revealObserver.observe(el));
-  </script>
 </body>
 </html>
