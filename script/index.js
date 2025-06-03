@@ -1,15 +1,25 @@
 'use strict';
 
-const reveals = document.querySelectorAll('.reveal');
+const fadeins = document.querySelectorAll('.fadein');
 
-const revealObserver = new IntersectionObserver((entries) => {
+const fadeinObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
+
+      // ➕ Desktop: ta bort observer när aktiv (bara en gång)
+      if (!window.matchMedia("(max-width: 768px)").matches) {
+        fadeinObserver.unobserve(entry.target);
+      }
+    } else {
+      // ➕ Mobil: tillåt att klassen tas bort igen
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        entry.target.classList.remove('active');
+      }
     }
   });
 }, {
   threshold: 0.1
 });
 
-reveals.forEach(el => revealObserver.observe(el));
+fadeins.forEach(el => fadeinObserver.observe(el));
