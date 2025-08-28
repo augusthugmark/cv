@@ -48,28 +48,52 @@ body {
 }
 
 .contact-info-title {
-  border-bottom: 2px solid #417b85; /* accentfärg */
-  padding-bottom: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #004d60;
+  display: inline-block;           
+  border-bottom: none;             
+  padding-bottom: 0;               
+  margin-bottom: 10px;
+
+  text-decoration: underline;
+  text-decoration-color: #2C5364;
+  text-decoration-thickness: 2px;  
+  text-underline-offset: 2px;      
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; 
+  font-weight: normal; 
+  line-height: 1.2;
 }
 
 .content h1 {
+  font-size: 24px;
+  font-weight: 700;  
+  color:#363535 ;    
   margin-bottom: 16px;
-  font-size: 26px;
 }
 
 .content h2 {
-  font-size: 22px;
-  font-weight: bold;
+  position: relative;
+  display: inline-block;
   margin: 24px 0 12px;
+}
+
+.content h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #2C5364, #417b85);
+  border-radius: 2px;
 }
 
 .content h3 {
   font-size: 18px;
-  color: #333;
+  font-weight: 600;
+  color: #333;      
+  margin-bottom: 8px;
 }
 
 .content p {
@@ -86,10 +110,18 @@ body {
   margin: 0;
 }
 
+.work-experience-education h3 {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
 .skill-list li {
   list-style-type: none; 
-  font-weight: bold;
   margin-bottom: 4px;
+  font-weight: normal;
+}
+
+.skill-list li strong {
+  font-weight: bold; 
 }
 
 .achievements li {
@@ -100,45 +132,59 @@ body {
 }
 
 .contact-links {
-  margin-top: 6px;
+  margin-top: -4px;
   display: flex;
   flex-direction: column;
 }
 
 .contact-links a {
-  color: #0077B5;
-  text-decoration: none;
-  font-weight: bold;
+  color: #004354;
+  text-decoration: none;    
+  font-weight: bold;        
+  transition: color 0.2s ease;
+}
+
+.content .job-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.contact-links a,
+.phone-link {
   position: relative;
 }
 
-.contact-links a::after {
-  content: '';
+.contact-links a::after,
+.phone-link::after {
+  content: "";
   position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #0077B5;
-  transition: width 0.3s;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background: #417b85;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
-.contact-links a:hover::after {
-  width: 100%;
+.contact-links a:hover::after,
+.phone-link:hover::after {
+  transform: scaleX(1);
 }
-
 
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-bottom: 16px;
+  margin: 10px 0 20px 0;
 }
 
 .social-icons a {
   font-size: 42px;
   color: #0c1d5b;
   transition: color 0.3s ease, transform 0.2s ease;
+  line-height: 1;
 }
 
 .social-icons a:hover {
@@ -149,7 +195,7 @@ body {
 .footer-text {
   background-color: #cdeff0;
   font-size: 11px;
-  color: #323232;
+  color: #2C5364;
   text-align: center;
   padding: 4px 0;
   margin: 0;
@@ -171,6 +217,18 @@ footer p {
   transform: translateY(0);
 }
 
+.phone-link {
+  color: #004354;
+  text-decoration: none;   
+  font-weight: bold;     
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover,
+.phone-link:hover {
+  color: #2C5364;
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 768px) {
   .container {
@@ -178,11 +236,16 @@ footer p {
   }
 
   .contact-links a {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .social-icons a {
     font-size: 38px;
   } 
+
+  .content h1 { font-size: 22px; }
+  .content h2 { font-size: 18px; }
+  .content h3 { font-size: 16px; }
+  .content p { font-size: 13px; }
 
 }
